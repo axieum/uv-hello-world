@@ -1,0 +1,25 @@
+version = 1
+revision = 3
+requires-python = ">=3.14"
+
+[manifest]
+members = [
+    "uv-hello-world",
+    "uv-hello-world-api",
+]
+
+[[package]]
+name = "uv-hello-world"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "uv-hello-world-api" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "uv-hello-world-api", editable = "packages/uv-hello-world-api" }]
+
+[[package]]
+name = "uv-hello-world-api"
+version = "1.0.0"
+source = { editable = "packages/uv-hello-world-api" }

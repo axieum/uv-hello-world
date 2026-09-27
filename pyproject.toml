@@ -1,0 +1,25 @@
+[project]
+name = "uv-hello-world"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Jonathan Hiles", email = "jonathan@hil.es" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "uv-hello-world-api",
+]
+
+[tool.uv.sources]
+uv-hello-world-api = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[project.scripts]
+uv-hello-world = "uv_hello_world:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
