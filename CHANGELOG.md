@@ -1,3 +1,13 @@
+## [0.1.1] - 2026-10-02
+
+### 🐛 Bug Fixes
+
+- Output the sum of 6 and 7
+
+### ⚙️ Miscellaneous Tasks
+
+- Release v0.1.1 (#4)
+
 ## [0.1.1] - 2026-10-01
 
 ### 🐛 Bug Fixes
