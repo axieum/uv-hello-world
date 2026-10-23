@@ -1,3 +1,9 @@
+## [0.1.3] - 2026-10-23
+
+### 🐛 Bug Fixes
+
+- Output the sum of 9 and 10
+
 ## [0.1.2] - 2026-10-22
 
 ### 🐛 Bug Fixes
