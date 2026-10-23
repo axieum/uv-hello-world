@@ -1,3 +1,9 @@
+## [0.1.2] - 2026-10-22
+
+### 🐛 Bug Fixes
+
+- Output the sum of 7 and 8
+
 ## [0.1.1] - 2026-10-01
 
 ### 🐛 Bug Fixes
