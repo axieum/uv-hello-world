@@ -1,3 +1,10 @@
+## [0.0.3] - 2026-11-17
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* Add CD workflow
+- *(release)* Correctly escape JSON when printing release info
+
 ## [0.0.2] - 2026-11-04
 
 ### 🐛 Bug Fixes
