@@ -35,11 +35,16 @@ jobs:
         uses: axieum/git-reflow@v1
 
       - name: 📝 Log release information
+        env:
+          PRS: ${{ steps.git-reflow.outputs.prs }}
+          PR: ${{ steps.git-reflow.outputs.pr }}
+          RELEASES: ${{ steps.git-reflow.outputs.releases }}
+          RELEASE: ${{ steps.git-reflow.outputs.release }}
         run: |
-          echo "PRs: ${{ steps.git-reflow.outputs.prs }}"
-          echo "PR: ${{ steps.git-reflow.outputs.pr }}"
-          echo "Releases: ${{ steps.git-reflow.outputs.releases }}"
-          echo "Release: ${{ steps.git-reflow.outputs.release }}"
+          printf '%s\n' "PRs: $PRS"
+          printf '%s\n' "PR: $PR"
+          printf '%s\n' "Releases: $RELEASES"
+          printf '%s\n' "Release: $RELEASE"
 
     outputs:
       prs: ${{ steps.git-reflow.outputs.prs }}
