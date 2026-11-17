@@ -1,0 +1,48 @@
+# Prepares and releases the project
+
+name: CD
+
+on:
+  push:
+    branches: [ 'main' ]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release:
+    name: Release
+
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: git-reflow-${{ github.ref }}
+      cancel-in-progress: false
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: ✨ Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: 🙌 Prepare release
+        id: git-reflow
+        uses: axieum/git-reflow@v1
+
+      - name: 📝 Log release information
+        run: |
+          echo "PRs: ${{ steps.git-reflow.outputs.prs }}"
+          echo "PR: ${{ steps.git-reflow.outputs.pr }}"
+          echo "Releases: ${{ steps.git-reflow.outputs.releases }}"
+          echo "Release: ${{ steps.git-reflow.outputs.release }}"
+
+    outputs:
+      prs: ${{ steps.git-reflow.outputs.prs }}
+      pr: ${{ steps.git-reflow.outputs.pr }}
+      releases: ${{ steps.git-reflow.outputs.releases }}
+      release: ${{ steps.git-reflow.outputs.release }}
